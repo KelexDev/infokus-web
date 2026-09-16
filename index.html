@@ -7,7 +7,7 @@
     <title>INFOKUS | Agencia de Diseño Gráfico y Redes Sociales</title>
     <meta name="description"
         content="Elevamos tu marca con diseño estratégico y gestión profesional de redes sociales.">
-    <!-- Tailwind CSS Play CDN para desarrollo ágil y limpio -->
+    <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/assets/css/styles.css">
 </head>
@@ -22,16 +22,15 @@
             <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
                 <a href="#servicios" class="hover:text-indigo-400 transition-colors">Servicios</a>
                 <a href="#portafolio" class="hover:text-indigo-400 transition-colors">Portafolio</a>
-                <a href="#nosotros" class="hover:text-indigo-400 transition-colors">Nosotros</a>
+                <a href="#contacto" class="hover:text-indigo-400 transition-colors">Contacto</a>
             </nav>
             <a href="#contacto"
                 class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-indigo-600/20">
-                Contáctanos
+                Hablemos
             </a>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
         <!-- Hero Section -->
         <section class="py-24 md:py-32 max-w-7xl mx-auto px-6 text-center">
@@ -46,16 +45,148 @@
             </p>
             <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#portafolio"
-                    class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-medium transition-all">
+                    class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-medium transition-all shadow-lg shadow-indigo-600/20">
                     Ver Portafolio
                 </a>
                 <a href="#contacto"
-                    class="bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-300 px-8 py-4 rounded-xl font-medium transition-all">
-                    Hablemos de tu proyecto
+                    class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-8 py-4 rounded-xl font-medium transition-all">
+                    Cotizar Servicio
                 </a>
             </div>
         </section>
+
+        <!-- Sección de Servicios -->
+        <section id="servicios" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Nuestros Servicios</h2>
+                    <p class="mt-4 text-slate-400">Soluciones creativas enfocadas en el crecimiento y posicionamiento de
+                        tu negocio.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Servicio 1 -->
+                    <div
+                        class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-all">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center font-bold text-xl mb-6">
+                            🎨</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Diseño Gráfico & Branding</h3>
+                        <p class="text-slate-400 leading-relaxed">Creamos la identidad visual completa de tu marca:
+                            logotipos profesionales, líneas gráficas, piezas para impresos y diseño publicitario que
+                            deja huella.</p>
+                    </div>
+                    <!-- Servicio 2 -->
+                    <div
+                        class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition-all">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center font-bold text-xl mb-6">
+                            📱</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Manejo de Redes Sociales</h3>
+                        <p class="text-slate-400 leading-relaxed">Estrategia de contenidos, planificación, copywriting
+                            persuasivo y gestión integral de tus plataformas digitales para conectar con tu audiencia
+                            ideal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Portafolio -->
+        <section id="portafolio" class="py-24 max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Nuestro Portafolio</h2>
+                    <p class="mt-4 text-slate-400">Una muestra del impacto visual y estratégico que hemos creado para
+                        nuestros clientes.</p>
+                </div>
+                <div class="mt-6 md:mt-0 flex gap-3">
+                    <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-600 text-white">Todos</span>
+                    <span
+                        class="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer">Branding</span>
+                    <span
+                        class="px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors cursor-pointer">Redes
+                        Sociales</span>
+                </div>
+            </div>
+
+            <!-- Retícula de Proyectos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 aspect-square flex items-center justify-center">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-indigo-900/30 to-violet-900/30 group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="relative z-10 text-center p-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Branding /
+                            Identidad</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Rediseño de Marca Corporativa</h3>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 aspect-square flex items-center justify-center">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-slate-900 group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="relative z-10 text-center p-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Social Media</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Campaña de Lanzamiento Digital</h3>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 aspect-square flex items-center justify-center">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-indigo-950 to-slate-900 group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="relative z-10 text-center p-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Diseño Gráfico</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Línea Gráfica para Eventos</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="py-24 max-w-4xl mx-auto px-6 border-t border-slate-800/80">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Listo para transformar tu marca?
+                </h2>
+                <p class="mt-4 text-slate-400">Escríbenos y comencemos a trabajar en tu próximo gran proyecto.</p>
+            </div>
+            <form class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Nombre o Empresa</label>
+                    <input type="text" required
+                        class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                        placeholder="Tu nombre">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Correo Electrónico</label>
+                    <input type="email" required
+                        class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                        placeholder="tucorreo@empresa.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Cuéntanos sobre tu proyecto</label>
+                    <textarea rows="4" required
+                        class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
+                        placeholder="¿Qué servicios necesitas?"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg shadow-indigo-600/20">
+                    Enviar Mensaje
+                </button>
+            </form>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 INFOKUS. Todos los derechos reservados.</p>
+    </footer>
 
     <!-- Script Principal -->
     <script src="./src/js/main.js"></script>
