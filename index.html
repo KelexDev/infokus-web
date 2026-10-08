@@ -4,336 +4,897 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFOKUS | Agencia de Diseño Gráfico y Redes Sociales</title>
+    <title>INFOKUS | Agencia de Marketing Digital, Manejo de Redes Sociales y Desarrollo Web en Colombia</title>
     <meta name="description"
-        content="Elevamos tu marca con diseño estratégico y gestión profesional de redes sociales.">
+        content="INFOKUS es la agencia de marketing digital en Colombia especializada en manejo de redes sociales, desarrollo web SEO, branding, fotografía profesional, chatbots y capacitaciones de marca. Hacemos crecer tu negocio con estrategia digital que convierte.">
+    <meta name="keywords" content="agencia marketing digital Colombia, manejo de redes sociales, gestión redes sociales, community manager, desarrollo web SEO, branding profesional, diseño gráfico, fotografía de producto, chatbots, capacitaciones de marca, social media Colombia, posicionamiento web, páginas web profesionales">
+    <meta name="author" content="INFOKUS">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://infokus.co">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="INFOKUS | Agencia de Marketing Digital y Manejo de Redes Sociales en Colombia">
+    <meta property="og:description" content="Hacemos crecer tu marca con estrategia digital: redes sociales, desarrollo web SEO, branding y producción audiovisual. Resultados reales, medibles y escalables.">
+    <meta property="og:url" content="https://infokus.co">
+    <meta property="og:site_name" content="INFOKUS">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="INFOKUS | Agencia de Marketing Digital en Colombia">
+    <meta name="twitter:description" content="Manejo profesional de redes sociales, desarrollo web SEO y branding para marcas que quieren crecer.">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./src/assets/images/infokusojo.png">
-    <!-- Tailwind CSS Play CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (Local) -->
+    <script src="./src/assets/js/tailwind.min.js"></script>
     <link rel="stylesheet" href="./src/assets/css/styles.css">
+
+    <!-- Schema.org: Organización / Negocio Local -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "INFOKUS",
+        "description": "Agencia de marketing digital en Colombia especializada en manejo de redes sociales, desarrollo web SEO, branding, fotografía profesional, chatbots y capacitaciones de marca.",
+        "url": "https://infokus.co",
+        "telephone": "+573243374019",
+        "email": "infokusdigital@gmail.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+        "priceRange": "$$",
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "sameAs": ["https://www.instagram.com/infokus.co/"],
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+573243374019", "contactType": "customer service", "availableLanguage": "Spanish" },
+        "serviceType": ["Manejo de Redes Sociales", "Marketing Digital", "Desarrollo Web", "SEO", "Diseño Gráfico", "Branding", "Fotografía Profesional", "Chatbots", "Capacitaciones de Marca"]
+    }
+    </script>
+    <!-- Schema.org: FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "¿Qué es INFOKUS y qué hace?", "acceptedAnswer": { "@type": "Answer", "text": "INFOKUS es una agencia de marketing digital en Colombia especializada en manejo de redes sociales, desarrollo web SEO, diseño gráfico, branding, fotografía profesional, chatbots y capacitaciones de marca. Ayudamos a las empresas a posicionarse, crecer y convertir en el entorno digital." } },
+            { "@type": "Question", "name": "¿Qué servicios ofrece INFOKUS?", "acceptedAnswer": { "@type": "Answer", "text": "Ofrecemos gestión profesional de redes sociales (Instagram, Facebook, TikTok), desarrollo de páginas web con SEO, diseño gráfico y branding, fotografía de producto y corporativa, producción audiovisual, implementación de chatbots, y capacitaciones personalizadas para equipos de marca." } },
+            { "@type": "Question", "name": "¿Cómo hacen crecer una marca en redes sociales?", "acceptedAnswer": { "@type": "Answer", "text": "Creamos una estrategia digital personalizada basada en análisis de mercado, competencia y audiencia. Diseñamos contenido visual profesional, implementamos calendarios editoriales, optimizamos cada publicación para el algoritmo de cada plataforma y medimos resultados con reportes mensuales de métricas reales." } },
+            { "@type": "Question", "name": "¿Para qué sirve el marketing digital?", "acceptedAnswer": { "@type": "Answer", "text": "El marketing digital permite a tu negocio llegar a clientes potenciales donde pasan la mayor parte de su tiempo: en internet y redes sociales. Aumenta la visibilidad de tu marca, genera confianza, atrae leads cualificados y convierte seguidores en clientes reales con inversiones medibles." } },
+            { "@type": "Question", "name": "¿Por qué elegir INFOKUS como agencia de marketing digital?", "acceptedAnswer": { "@type": "Answer", "text": "Porque combinamos estrategia, diseño y tecnología en un solo equipo. Ofrecemos diagnóstico gratuito, propuestas personalizadas sin compromiso, resultados medibles con reportes mensuales y un equipo que conoce el mercado colombiano. Nuestras cuentas gestionadas han logrado multiplicar hasta 2.7x sus visualizaciones en dos meses." } }
+        ]
+    }
+    </script>
 </head>
 
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white relative">
 
+    <!-- Partículas globales -->
+    <div id="particles-global" class="particle-global"></div>
+
+    <!-- Barra de progreso -->
+    <div id="read-progress" class="read-progress"></div>
+
+    <!-- ═══════════════════════════════════════
+         HEADER / NAVEGACIÓN
+         ═══════════════════════════════════════ -->
     <header id="main-header"
-        class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800 transition-transform duration-300">
-        <div
-            class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between md:grid md:grid-cols-3 md:justify-items-stretch">
-            <!-- Logotipo -->
+        class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-950/60 border-b border-slate-800/50 transition-transform duration-700 ease-in-out">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between md:grid md:grid-cols-3 md:justify-items-stretch">
+            <!-- Logo -->
             <a href="#" class="flex items-center group md:justify-self-start">
-                <img src="./src/assets/images/infokus-logo.png" alt="Logo oficial de INFOKUS"
+                <img src="./src/assets/images/infokus-logo.png" alt="INFOKUS — Agencia de marketing digital en Colombia"
                     class="max-h-20 w-auto object-contain scale-[1.4] md:scale-[1.8] origin-left">
             </a>
 
-            <!-- Nav Desktop (centrado) -->
-            <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-300 justify-self-center">
-                <a href="#servicios" class="hover:text-indigo-400 transition-colors">Servicios</a>
+            <!-- Nav Desktop -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300 justify-self-center">
                 <a href="#portafolio" class="hover:text-indigo-400 transition-colors">Portafolio</a>
-                <a href="#contacto" class="hover:text-indigo-400 transition-colors">Contacto</a>
+                <a href="#nosotros" class="hover:text-indigo-400 transition-colors">Nosotros</a>
+                <!-- Dropdown Servicios -->
+                <div class="nav-dropdown-trigger">
+                    <a href="#servicios" class="hover:text-indigo-400 transition-colors flex items-center gap-1">
+                        Servicios
+                        <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="./servicios/redes-sociales.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-icon bg-pink-500/10 text-pink-400">📱</span>
+                            <div><span class="text-white font-semibold text-sm">Redes Sociales</span><br><span class="text-xs text-slate-500">Social Media & Community Manager</span></div>
+                        </a>
+                        <a href="./servicios/desarrollo-web.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-icon bg-emerald-500/10 text-emerald-400">💻</span>
+                            <div><span class="text-white font-semibold text-sm">Desarrollo Web & SEO</span><br><span class="text-xs text-slate-500">Páginas web optimizadas para Google</span></div>
+                        </a>
+                        <a href="./servicios/diseno-branding.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-icon bg-violet-500/10 text-violet-400">🎨</span>
+                            <div><span class="text-white font-semibold text-sm">Diseño Gráfico & Branding</span><br><span class="text-xs text-slate-500">Identidad visual profesional</span></div>
+                        </a>
+                        <a href="./servicios/fotografia.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-icon bg-amber-500/10 text-amber-400">📸</span>
+                            <div><span class="text-white font-semibold text-sm">Fotografía & Audiovisual</span><br><span class="text-xs text-slate-500">Contenido visual de alta calidad</span></div>
+                        </a>
+                        <a href="./servicios/chatbots.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-icon bg-cyan-500/10 text-cyan-400">🤖</span>
+                            <div><span class="text-white font-semibold text-sm">Chatbots & Automatización</span><br><span class="text-xs text-slate-500">Atención 24/7 para tu negocio</span></div>
+                        </a>
+                        <a href="./servicios/capacitaciones.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-icon bg-indigo-500/10 text-indigo-400">🎓</span>
+                            <div><span class="text-white font-semibold text-sm">Capacitaciones de Marca</span><br><span class="text-xs text-slate-500">Paquetes individuales y grupales</span></div>
+                        </a>
+                        <a href="./servicios/paquetes.html" class="nav-dropdown-item">
+                            <span class="nav-dropdown-icon bg-rose-500/10 text-rose-400">📦</span>
+                            <div><span class="text-white font-semibold text-sm">Paquetes Personalizados</span><br><span class="text-xs text-slate-500">Acompañamiento a la medida</span></div>
+                        </a>
+                    </div>
+                </div>
+                <a href="./radar-digital.html" class="hover:text-indigo-400 transition-colors">Radar Digital</a>
             </nav>
 
-            <!-- Botón Hablemos (solo desktop) -->
-            <a href="#contacto"
+            <!-- Botón Contáctanos -->
+            <a href="./contactanos.html"
                 class="hidden md:inline-flex bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-indigo-600/20 justify-self-end">
-                Hablemos
+                Contáctanos
             </a>
 
-            <!-- Botón Hamburguesa (solo móvil) -->
+            <!-- Hamburguesa Móvil -->
             <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2" aria-label="Abrir menú">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
 
-        <!-- Menú Móvil (desplegable) -->
+        <!-- Menú Móvil -->
         <nav id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-md">
-            <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
-                <a href="#servicios"
-                    class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors">Servicios</a>
-                <a href="#portafolio"
-                    class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors">Portafolio</a>
-                <a href="#contacto"
-                    class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors">Contacto</a>
-                <a href="#contacto"
+            <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
+                <a href="#portafolio" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors">Portafolio</a>
+                <a href="#nosotros" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors">Nosotros</a>
+                <a href="#servicios" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors">Servicios</a>
+                <div class="pl-4 flex flex-col gap-2 border-l border-slate-800">
+                    <a href="./servicios/redes-sociales.html" class="text-slate-400 text-sm hover:text-indigo-400 transition-colors">📱 Redes Sociales</a>
+                    <a href="./servicios/desarrollo-web.html" class="text-slate-400 text-sm hover:text-indigo-400 transition-colors">💻 Desarrollo Web & SEO</a>
+                    <a href="./servicios/diseno-branding.html" class="text-slate-400 text-sm hover:text-indigo-400 transition-colors">🎨 Diseño & Branding</a>
+                    <a href="./servicios/fotografia.html" class="text-slate-400 text-sm hover:text-indigo-400 transition-colors">📸 Fotografía & Audiovisual</a>
+                    <a href="./servicios/chatbots.html" class="text-slate-400 text-sm hover:text-indigo-400 transition-colors">🤖 Chatbots</a>
+                    <a href="./servicios/capacitaciones.html" class="text-slate-400 text-sm hover:text-indigo-400 transition-colors">🎓 Capacitaciones</a>
+                    <a href="./servicios/paquetes.html" class="text-slate-400 text-sm hover:text-indigo-400 transition-colors">📦 Paquetes</a>
+                </div>
+                <a href="./radar-digital.html" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors">Radar Digital</a>
+                <a href="./contactanos.html"
                     class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-xl text-sm font-semibold text-center transition-all shadow-lg shadow-indigo-600/20 mt-2">
-                    Hablemos
+                    Contáctanos
                 </a>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="relative py-24 md:py-32 overflow-hidden">
-            <!-- Imagen de fondo -->
+        <!-- ═══════════════════════════════════════
+             HERO — TECNOLÓGICO E INTERACTIVO
+             ═══════════════════════════════════════ -->
+        <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+            <!-- Fondo tecnológico -->
             <div class="absolute inset-0">
-                <img id="hero-bg" src="./src/assets/images/hero-bg.jpg" alt=""
-                    class="w-full h-full object-cover scale-110">
-                <div class="absolute inset-0 bg-slate-950/70"></div>
-                <!-- Degradado inferior para fusionar con la siguiente sección -->
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950/20 to-slate-950"></div>
+                <div class="hero-grid-bg"></div>
+                <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-indigo-600/6 blur-[120px] pointer-events-none animate-pulse" style="animation-duration:8s"></div>
+                <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-violet-600/5 blur-[100px] pointer-events-none animate-pulse" style="animation-duration:12s"></div>
+                <div class="absolute top-1/2 right-0 w-[300px] h-[300px] rounded-full bg-pink-600/4 blur-[80px] pointer-events-none animate-pulse" style="animation-duration:10s"></div>
                 <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
-            <!-- Contenido -->
-            <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
-                    Potenciamos tu marca con <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">estrategia
-                        visual y digital</span>
-                </h1>
-                <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
-                    Diseño gráfico de alto impacto y gestión profesional de redes sociales diseñados para convertir
-                    seguidores en clientes fieles.
-                </p>
-                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#portafolio"
-                        class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-medium transition-all shadow-lg shadow-indigo-600/20">
-                        Ver Portafolio
-                    </a>
-                    <a href="#contacto"
-                        class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-medium transition-all">
-                        Cotizar Servicio
-                    </a>
-                </div>
-            </div>
-        </section>
+            <!-- Partículas del hero -->
+            <div id="particles-hero" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
 
-        <!-- Sección de Servicios -->
-        <section id="servicios" class="relative py-20 overflow-hidden -mt-1">
-            <!-- Imagen de fondo con degradado de transición -->
-            <div class="absolute inset-0">
-                <img id="services-bg" src="./src/assets/images/services-bg.jpg" alt=""
-                    class="w-full h-full object-cover scale-110">
-                <div class="absolute inset-0 bg-slate-950/50"></div>
-                <!-- Degradado superior: fusión con el hero -->
-                <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-slate-950 to-transparent"></div>
-                <!-- Degradado inferior: transición suave al siguiente contenedor -->
-                <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 to-transparent"></div>
-            </div>
+            <!-- Contenido: dos columnas -->
             <div class="relative z-10 max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Nuestros Servicios</h2>
-                    <p class="mt-4 text-slate-300">Soluciones creativas enfocadas en el crecimiento y posicionamiento de
-                        tu negocio.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Servicio 1 -->
-                    <div
-                        class="p-8 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-indigo-500/50 transition-all">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center font-bold text-xl mb-6">
-                            🎨</div>
-                        <h3 class="text-xl font-semibold text-white mb-3">Diseño Gráfico & Branding</h3>
-                        <p class="text-slate-400 leading-relaxed">Creamos la identidad visual completa de tu marca:
-                            logotipos profesionales, líneas gráficas, piezas para impresos y diseño publicitario que
-                            deja huella.</p>
-                    </div>
-                    <!-- Servicio 2 -->
-                    <div
-                        class="p-8 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-indigo-500/50 transition-all">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center font-bold text-xl mb-6">
-                            📱</div>
-                        <h3 class="text-xl font-semibold text-white mb-3">Manejo de Redes Sociales</h3>
-                        <p class="text-slate-400 leading-relaxed">Estrategia de contenidos, planificación, copywriting
-                            persuasivo y gestión integral de tus plataformas digitales para conectar con tu audiencia
-                            ideal.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    
+                    <!-- Columna Izquierda: Texto -->
+                    <div class="text-center lg:text-left order-2 lg:order-1">
+                        <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse inline-block"></span>
+                            Marketing Digital · Colombia
+                        </span>
 
-        <!-- Sección de Portafolio / Marcas Gestionadas -->
-        <section id="portafolio" class="relative py-24 overflow-hidden -mt-1">
-            <!-- Imagen de fondo -->
-            <div class="absolute inset-0">
-                <img id="portfolio-bg" src="./src/assets/images/portfolio-bg.jpg" alt=""
-                    class="w-full h-full object-cover scale-110">
-                <div class="absolute inset-0 bg-slate-950/50"></div>
-                <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-slate-950 to-transparent"></div>
-                <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 to-transparent"></div>
-            </div>
-            <div class="relative z-10 max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span
-                        class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Casos
-                        de Éxito</span>
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-4">Marcas que Confían en
-                        INFOKUS
-                    </h2>
-                    <p class="mt-4 text-slate-300">Gestionamos la estrategia digital, identidad y contenidos de marcas
-                        líderes en su sector.</p>
-                </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+                            Hacemos crecer
+                            <span class="glow-text"> marcas</span>
+                            <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-violet-400 to-pink-400" style="line-height:1.2" id="hero-typed-text">con estrategia digital</span>
+                        </h1>
 
-                <!-- Retícula de Marcas -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <p class="mt-6 text-base md:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            Redes sociales, desarrollo web, branding y más — <strong class="text-slate-200">todo con un solo equipo</strong>.
+                        </p>
 
-                    <!-- Marca 1: Arriendo Panorama Norte -->
-                    <div
-                        class="group relative rounded-2xl overflow-hidden bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between p-8">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-indigo-950/40 to-slate-900 opacity-60 group-hover:scale-105 transition-transform duration-500">
+                        <!-- CTAs -->
+                        <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
+                            <a href="#portafolio"
+                                class="cta-shine bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3.5 rounded-xl font-medium transition-all shadow-lg shadow-indigo-600/20 text-sm">
+                                Ver Portafolio
+                            </a>
+                            <a href="./contactanos.html"
+                                class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-7 py-3.5 rounded-xl font-medium transition-all text-sm">
+                                Solicitar Cotización →
+                            </a>
                         </div>
-                        <div class="relative z-10">
-                            <!-- Logotipo centrado y uniforme -->
-                            <div class="h-20 mb-6 flex items-center justify-center">
-                                <img src="./src/assets/images/panorama-logo.png" alt="Logo Arrendamiento Panorama Norte"
-                                    class="h-full max-w-[160px] w-auto object-contain drop-shadow-lg">
+
+                        <!-- Mini Stats - horizontal compacto -->
+                        <div class="mt-10 grid grid-cols-4 gap-4 max-w-lg mx-auto lg:mx-0">
+                            <div class="text-center">
+                                <div class="text-xl md:text-2xl font-extrabold text-white stat-counter" data-target="171" data-prefix="+" data-suffix="%">0</div>
+                                <div class="text-[10px] text-slate-500 mt-0.5 leading-tight">Alcance orgánico</div>
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Real Estate /
-                                Social
-                                Media</span>
+                            <div class="text-center">
+                                <div class="text-xl md:text-2xl font-extrabold text-white stat-counter" data-target="19.5" data-prefix="+" data-suffix="%">0</div>
+                                <div class="text-[10px] text-slate-500 mt-0.5 leading-tight">Seguidores /mes</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xl md:text-2xl font-extrabold text-white stat-counter" data-target="100" data-suffix="%">0</div>
+                                <div class="text-[10px] text-slate-500 mt-0.5 leading-tight">A la medida</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-xl md:text-2xl font-extrabold text-white">24h</div>
+                                <div class="text-[10px] text-slate-500 mt-0.5 leading-tight">Respuesta</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Robot Mascota Interactivo -->
+                    <div class="order-1 lg:order-2 flex justify-center items-center" id="robot-container">
+                        <div class="robot-wrapper">
+                            <!-- Glow detrás del robot -->
+                            <div class="robot-glow"></div>
+                            
+                            <!-- Robot 3D Image -->
+                            <div class="robot-3d-scene" id="infokus-robot">
+                                <img src="./src/assets/images/foki-robot.jpg" 
+                                     alt="FOKI — Mascota robot de INFOKUS" 
+                                     class="robot-img"
+                                     id="robot-img">
+                                
+                                <!-- Overlay de ojos interactivos (siguen el mouse) -->
+                                <div class="robot-eyes-overlay" id="robot-eyes-overlay">
+                                    <div class="robot-eye-3d" id="eye-left-3d">
+                                        <div class="robot-pupil-3d"></div>
+                                    </div>
+                                    <div class="robot-eye-3d" id="eye-right-3d">
+                                        <div class="robot-pupil-3d"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Speech bubble del robot -->
+                            <div class="robot-speech" id="robot-speech">
+                                <span id="robot-speech-text">¡Hola! 👋 Soy FOKI</span>
+                            </div>
+
+                            <!-- Service Pills flotantes alrededor del robot -->
+                            <div class="robot-floating-pills">
+                                <span class="robot-pill robot-pill-1">📱 Redes</span>
+                                <span class="robot-pill robot-pill-2">💻 Web</span>
+                                <span class="robot-pill robot-pill-3">🎨 Branding</span>
+                                <span class="robot-pill robot-pill-4">📸 Foto</span>
+                                <span class="robot-pill robot-pill-5">🤖 Bots</span>
+                                <span class="robot-pill robot-pill-6">🎓 Aprende</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SOBRE NOSOTROS
+             ═══════════════════════════════════════ -->
+        <section id="nosotros" class="relative py-24 overflow-hidden -mt-1">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/20 to-slate-950"></div>
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="fade-up">
+                        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Sobre Nosotros</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mt-4 leading-tight">La agencia que entiende tu <strong class="text-indigo-400">negocio digital</strong></h2>
+                        <p class="mt-5 text-slate-300 leading-relaxed text-sm md:text-base">
+                            No vendemos likes — construimos <strong class="text-white">audiencias que compran</strong>. Redes sociales, SEO, branding y más, diseñados para el mercado colombiano.
+                        </p>
+                    </div>
+                    <div class="fade-up grid grid-cols-2 gap-4">
+                        <div class="bg-slate-900/70 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-indigo-500/40 transition-colors p-6 text-center">
+                            <div class="text-3xl mb-3">🎯</div>
+                            <h3 class="text-white font-semibold text-sm mb-1">Estrategia</h3>
+                            <p class="text-slate-500 text-xs">Planes basados en datos reales</p>
+                        </div>
+                        <div class="bg-slate-900/70 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-violet-500/40 transition-colors p-6 text-center">
+                            <div class="text-3xl mb-3">✨</div>
+                            <h3 class="text-white font-semibold text-sm mb-1">Creatividad</h3>
+                            <p class="text-slate-500 text-xs">Contenido visual que conecta</p>
+                        </div>
+                        <div class="bg-slate-900/70 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-emerald-500/40 transition-colors p-6 text-center">
+                            <div class="text-3xl mb-3">📊</div>
+                            <h3 class="text-white font-semibold text-sm mb-1">Resultados</h3>
+                            <p class="text-slate-500 text-xs">Reportes mensuales transparentes</p>
+                        </div>
+                        <div class="bg-slate-900/70 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-pink-500/40 transition-colors p-6 text-center">
+                            <div class="text-3xl mb-3">🤝</div>
+                            <h3 class="text-white font-semibold text-sm mb-1">Acompañamiento</h3>
+                            <p class="text-slate-500 text-xs">Disponibles lunes a sábado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SERVICIOS
+             ═══════════════════════════════════════ -->
+        <section id="servicios" class="relative py-24 overflow-hidden -mt-1">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/10 to-slate-950"></div>
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 fade-up">
+                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Lo que hacemos</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-4">Soluciones digitales integrales</h2>
+                    <p class="mt-3 text-slate-400 text-sm">Todo lo que tu marca necesita para crecer en digital.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Redes Sociales -->
+                    <a href="./servicios/redes-sociales.html" class="group p-7 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-pink-500/50 transition-all duration-300 hover:translate-y-[-4px] fade-up block">
+                        <div class="w-12 h-12 rounded-xl bg-pink-600/15 text-pink-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform text-xl">📱</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Gestión de Redes Sociales</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Instagram, Facebook y TikTok. Contenido que convierte seguidores en clientes.</p>
+                        <span class="inline-flex items-center gap-1 text-pink-400 text-xs font-semibold mt-4 group-hover:gap-2 transition-all">Ver servicio <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+                    </a>
+                    <!-- Desarrollo Web -->
+                    <a href="./servicios/desarrollo-web.html" class="group p-7 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 hover:translate-y-[-4px] fade-up block">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-600/15 text-emerald-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform text-xl">💻</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Desarrollo Web &amp; SEO</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Páginas web rápidas, optimizadas para Google y diseñadas para convertir.</p>
+                        <span class="inline-flex items-center gap-1 text-emerald-400 text-xs font-semibold mt-4 group-hover:gap-2 transition-all">Ver servicio <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+                    </a>
+                    <!-- Diseño & Branding -->
+                    <a href="./servicios/diseno-branding.html" class="group p-7 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-violet-500/50 transition-all duration-300 hover:translate-y-[-4px] fade-up block">
+                        <div class="w-12 h-12 rounded-xl bg-violet-600/15 text-violet-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform text-xl">🎨</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Diseño Gráfico &amp; Branding</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Logotipos, manual de marca y línea gráfica que transmite confianza.</p>
+                        <span class="inline-flex items-center gap-1 text-violet-400 text-xs font-semibold mt-4 group-hover:gap-2 transition-all">Ver servicio <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+                    </a>
+                    <!-- Fotografía -->
+                    <a href="./servicios/fotografia.html" class="group p-7 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-amber-500/50 transition-all duration-300 hover:translate-y-[-4px] fade-up block">
+                        <div class="w-12 h-12 rounded-xl bg-amber-600/15 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform text-xl">📸</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Fotografía &amp; Audiovisual</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Producto, corporativa y contenido audiovisual de alta calidad para redes.</p>
+                        <span class="inline-flex items-center gap-1 text-amber-400 text-xs font-semibold mt-4 group-hover:gap-2 transition-all">Ver servicio <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+                    </a>
+                    <!-- Chatbots -->
+                    <a href="./servicios/chatbots.html" class="group p-7 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:translate-y-[-4px] fade-up block">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-600/15 text-cyan-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform text-xl">🤖</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Chatbots &amp; Automatización</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">WhatsApp, Instagram y web. Atención 24/7 y embudos de venta automáticos.</p>
+                        <span class="inline-flex items-center gap-1 text-cyan-400 text-xs font-semibold mt-4 group-hover:gap-2 transition-all">Ver servicio <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+                    </a>
+                    <!-- Capacitaciones -->
+                    <a href="./servicios/capacitaciones.html" class="group p-7 rounded-2xl bg-slate-900/70 backdrop-blur-sm border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300 hover:translate-y-[-4px] fade-up block">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-600/15 text-indigo-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform text-xl">🎓</div>
+                        <h3 class="text-lg font-bold text-white mb-2">Capacitaciones de Marca</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Capacita a tu equipo en marketing digital y creación de contenido.</p>
+                        <span class="inline-flex items-center gap-1 text-indigo-400 text-xs font-semibold mt-4 group-hover:gap-2 transition-all">Ver servicio <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             PORTAFOLIO / CLIENTES — MARQUEE
+             ═══════════════════════════════════════ -->
+        <section id="portafolio" class="relative py-24 overflow-hidden -mt-1">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/20 to-slate-950"></div>
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
+                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">Casos de Éxito</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-4">Marcas que Confían en INFOKUS</h2>
+                    <p class="mt-4 text-slate-300">Gestionamos la estrategia digital, identidad y contenidos de marcas líderes en su sector.</p>
+                </div>
+
+                <!-- Logo Marquee -->
+                <div class="marquee-container mb-16 fade-up">
+                    <div class="marquee-track" id="logo-marquee">
+                        <img src="./src/assets/images/panorama-logo.png" alt="Panorama Norte" class="marquee-logo">
+                        <img src="./src/assets/images/innovar-logo.png" alt="Innovar Recicla" class="marquee-logo">
+                        <img src="./src/assets/images/obra-logo.jpg" alt="Servicios Técnicos de Obra" class="marquee-logo rounded-lg">
+                        <img src="./src/assets/images/panorama-logo.png" alt="Panorama Norte" class="marquee-logo">
+                        <img src="./src/assets/images/innovar-logo.png" alt="Innovar Recicla" class="marquee-logo">
+                        <img src="./src/assets/images/obra-logo.jpg" alt="Servicios Técnicos de Obra" class="marquee-logo rounded-lg">
+                        <!-- Duplicados para scroll infinito -->
+                        <img src="./src/assets/images/panorama-logo.png" alt="Panorama Norte" class="marquee-logo">
+                        <img src="./src/assets/images/innovar-logo.png" alt="Innovar Recicla" class="marquee-logo">
+                        <img src="./src/assets/images/obra-logo.jpg" alt="Servicios Técnicos de Obra" class="marquee-logo rounded-lg">
+                        <img src="./src/assets/images/panorama-logo.png" alt="Panorama Norte" class="marquee-logo">
+                        <img src="./src/assets/images/innovar-logo.png" alt="Innovar Recicla" class="marquee-logo">
+                        <img src="./src/assets/images/obra-logo.jpg" alt="Servicios Técnicos de Obra" class="marquee-logo rounded-lg">
+                    </div>
+                </div>
+
+                <!-- Brand Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Panorama Norte -->
+                    <div class="group relative rounded-2xl overflow-hidden bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between p-8 fade-up">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/40 to-slate-900 opacity-60 group-hover:scale-105 transition-transform duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="h-20 mb-6 flex items-center justify-center">
+                                <img src="./src/assets/images/panorama-logo.png" alt="Logo Arrendamiento Panorama Norte" class="h-full max-w-[160px] w-auto object-contain drop-shadow-lg">
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Real Estate / Social Media</span>
                             <h3 class="text-2xl font-bold text-white mt-2 mb-3">Panorama Norte</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Estrategia de contenidos
-                                inmobiliarios
-                                orientada a la captación y confianza en el sector raíz.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Estrategia de contenidos inmobiliarios orientada a la captación y confianza en el sector raíz.</p>
                         </div>
                         <div class="relative z-10 pt-4 border-t border-slate-800/80">
-                            <a href="https://www.instagram.com/arrendamientopanoramanorte/" target="_blank"
-                                rel="noopener noreferrer"
+                            <a href="https://www.instagram.com/arrendamientopanoramanorte/" target="_blank" rel="noopener noreferrer"
                                 class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
                                 Ver perfil en Instagram
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </a>
                         </div>
                     </div>
-
-                    <!-- Marca 2: Innovar Recicla -->
-                    <div
-                        class="group relative rounded-2xl overflow-hidden bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between p-8">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-emerald-950/40 to-slate-900 opacity-60 group-hover:scale-105 transition-transform duration-500">
-                        </div>
+                    <!-- Innovar Recicla -->
+                    <div class="group relative rounded-2xl overflow-hidden bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between p-8 fade-up">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-950/40 to-slate-900 opacity-60 group-hover:scale-105 transition-transform duration-500"></div>
                         <div class="relative z-10">
-                            <!-- Logotipo centrado y uniforme -->
                             <div class="h-20 mb-6 flex items-center justify-center">
-                                <img src="./src/assets/images/innovar-logo.png" alt="Logo Innovar Recicla"
-                                    class="h-full max-w-[160px] w-auto object-contain drop-shadow-lg">
+                                <img src="./src/assets/images/innovar-logo.png" alt="Logo Innovar Recicla" class="h-full max-w-[160px] w-auto object-contain drop-shadow-lg">
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Sostenibilidad /
-                                Social Media</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Sostenibilidad / Social Media</span>
                             <h3 class="text-2xl font-bold text-white mt-2 mb-3">Innovar Recicla</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Gestión de comunidad y educación
-                                ambiental con enfoque visual dinámico y ecológico.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Gestión de comunidad y educación ambiental con enfoque visual dinámico y ecológico.</p>
                         </div>
                         <div class="relative z-10 pt-4 border-t border-slate-800/80">
-                            <a href="https://www.instagram.com/innovarrecicla/" target="_blank"
-                                rel="noopener noreferrer"
+                            <a href="https://www.instagram.com/innovarrecicla/" target="_blank" rel="noopener noreferrer"
                                 class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
                                 Ver perfil en Instagram
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </a>
                         </div>
                     </div>
-
-                    <!-- Marca 3: Servicios Técnicos de Obra -->
-                    <div
-                        class="group relative rounded-2xl overflow-hidden bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-indigo-500/50 transition-all duration-300 flex flex-col justify-between p-8">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-br from-amber-950/40 to-slate-900 opacity-60 group-hover:scale-105 transition-transform duration-500">
-                        </div>
+                    <!-- Servicios Técnicos de Obra -->
+                    <div class="group relative rounded-2xl overflow-hidden bg-slate-900/60 backdrop-blur-sm border border-slate-700/50 hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between p-8 fade-up">
+                        <div class="absolute inset-0 bg-gradient-to-br from-amber-950/40 to-slate-900 opacity-60 group-hover:scale-105 transition-transform duration-500"></div>
                         <div class="relative z-10">
-                            <!-- Logotipo centrado y uniforme -->
                             <div class="h-20 mb-6 flex items-center justify-center">
-                                <img src="./src/assets/images/obra-logo.jpg" alt="Logo Servicios Técnicos de Obra"
-                                    class="h-full max-w-[160px] w-auto object-contain rounded-xl drop-shadow-lg">
+                                <img src="./src/assets/images/obra-logo.jpg" alt="Logo Servicios Técnicos de Obra" class="h-full max-w-[160px] w-auto object-contain rounded-xl drop-shadow-lg">
                             </div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Construcción /
-                                Social
-                                Media</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Construcción / Social Media</span>
                             <h3 class="text-2xl font-bold text-white mt-2 mb-3">Servicios Técnicos de Obra</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Comunicación técnica y comercial
-                                orientada a proyectos de ingeniería y obra civil.</p>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Comunicación técnica y comercial orientada a proyectos de ingeniería y obra civil.</p>
                         </div>
                         <div class="relative z-10 pt-4 border-t border-slate-800/80">
-                            <a href="https://www.instagram.com/sto_serviciostecnicosdeobra/" target="_blank"
-                                rel="noopener noreferrer"
+                            <a href="https://www.instagram.com/sto_serviciostecnicosdeobra/" target="_blank" rel="noopener noreferrer"
                                 class="inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors">
                                 Ver perfil en Instagram
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Contacto -->
-        <section id="contacto" class="relative py-24 overflow-hidden -mt-1">
-            <!-- Imagen de fondo -->
+        <!-- ═══════════════════════════════════════
+             FAQ — PREGUNTAS FRECUENTES
+             ═══════════════════════════════════════ -->
+        <section id="faq" class="relative py-24 overflow-hidden -mt-1">
             <div class="absolute inset-0">
-                <img id="contact-bg" src="./src/assets/images/contact-bg.jpg" alt=""
-                    class="w-full h-full object-cover scale-110">
-                <div class="absolute inset-0 bg-slate-950/50"></div>
-                <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-slate-950 to-transparent"></div>
-                <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-violet-950/10 to-slate-950"></div>
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
             </div>
-            <div class="relative z-10 max-w-4xl mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Listo para transformar tu
-                        marca?
-                    </h2>
-                    <p class="mt-4 text-slate-300">Escríbenos y comencemos a trabajar en tu próximo gran proyecto.</p>
+            <div class="relative z-10 max-w-3xl mx-auto px-6">
+                <div class="text-center mb-14 fade-up">
+                    <span class="text-xs font-bold uppercase tracking-widest text-violet-400 bg-violet-500/10 px-3 py-1 rounded-full border border-violet-500/20">Resolvemos tus dudas</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-4">Preguntas Frecuentes sobre INFOKUS</h2>
                 </div>
-                <form
-                    class="bg-slate-900/60 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 shadow-xl space-y-6">
-                    <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-2">Nombre o Empresa</label>
-                        <input type="text" required
-                            class="w-full bg-slate-950/70 backdrop-blur-sm border border-slate-700/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                            placeholder="Tu nombre">
+                <div class="space-y-3" id="faq-container">
+                    <div class="faq-item fade-up">
+                        <button class="faq-question">¿Qué es INFOKUS y qué hace?<svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg></button>
+                        <div class="faq-answer"><div class="faq-answer-inner">INFOKUS es una <strong class="text-slate-200">agencia de marketing digital en Colombia</strong> especializada en manejo de redes sociales, desarrollo web SEO, diseño gráfico, branding, fotografía profesional, chatbots y capacitaciones de marca. Ayudamos a las empresas a posicionarse, crecer y convertir en el entorno digital.</div></div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-2">Correo Electrónico</label>
-                        <input type="email" required
-                            class="w-full bg-slate-950/70 backdrop-blur-sm border border-slate-700/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                            placeholder="tucorreo@empresa.com">
+                    <div class="faq-item fade-up">
+                        <button class="faq-question">¿Qué servicios ofrece INFOKUS?<svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg></button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Ofrecemos <strong class="text-slate-200">gestión profesional de redes sociales</strong> (Instagram, Facebook, TikTok), desarrollo de páginas web con SEO, diseño gráfico y branding, fotografía de producto y corporativa, producción audiovisual, implementación de chatbots, y capacitaciones personalizadas para equipos de marca.</div></div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-2">Cuéntanos sobre tu proyecto</label>
-                        <textarea rows="4" required
-                            class="w-full bg-slate-950/70 backdrop-blur-sm border border-slate-700/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-indigo-500 transition-colors"
-                            placeholder="¿Qué servicios necesitas?"></textarea>
+                    <div class="faq-item fade-up">
+                        <button class="faq-question">¿Cómo construyen la identidad de una marca?<svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg></button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Iniciamos con un diagnóstico profundo de tu negocio, tu competencia y tu audiencia. A partir de ahí diseñamos la identidad visual (logotipo, paleta, tipografía), definimos la voz de marca y creamos todo el sistema gráfico — desde el manual de marca hasta las piezas para redes sociales y materiales impresos.</div></div>
                     </div>
-                    <button type="submit"
-                        class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3.5 rounded-xl transition-all shadow-lg shadow-indigo-600/20">
-                        Enviar Mensaje
-                    </button>
-                </form>
+                    <div class="faq-item fade-up">
+                        <button class="faq-question">¿Cómo hacen crecer una marca en redes sociales?<svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg></button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Creamos una <strong class="text-slate-200">estrategia digital personalizada</strong> basada en análisis de mercado, competencia y audiencia. Diseñamos contenido visual profesional, implementamos calendarios editoriales, optimizamos cada publicación para el algoritmo de cada plataforma y medimos resultados con reportes mensuales de métricas reales.</div></div>
+                    </div>
+                    <div class="faq-item fade-up">
+                        <button class="faq-question">¿Para qué sirve el marketing digital?<svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg></button>
+                        <div class="faq-answer"><div class="faq-answer-inner">El marketing digital permite a tu negocio llegar a clientes potenciales donde pasan la mayor parte de su tiempo: en internet y redes sociales. Aumenta la visibilidad de tu marca, genera confianza, atrae leads cualificados y <strong class="text-slate-200">convierte seguidores en clientes reales</strong> con inversiones medibles.</div></div>
+                    </div>
+                    <div class="faq-item fade-up">
+                        <button class="faq-question">¿Por qué elegir INFOKUS como agencia?<svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg></button>
+                        <div class="faq-answer"><div class="faq-answer-inner">Porque combinamos estrategia, diseño y tecnología en un solo equipo. Ofrecemos <strong class="text-slate-200">diagnóstico gratuito</strong>, propuestas personalizadas sin compromiso, resultados medibles con reportes mensuales y un equipo que conoce el mercado colombiano. Nuestras cuentas gestionadas han logrado multiplicar hasta 2.7x sus visualizaciones en dos meses.</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             CTA FINAL
+             ═══════════════════════════════════════ -->
+        <section class="relative py-28 overflow-hidden -mt-1">
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/40 via-slate-950 to-violet-950/30"></div>
+                <div class="absolute inset-0 opacity-[0.03]" style="background-image:linear-gradient(rgba(99,102,241,1) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,1) 1px,transparent 1px);background-size:40px 40px"></div>
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-indigo-600/8 blur-[150px] pointer-events-none"></div>
+                <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-slate-950 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6 text-center fade-up">
+                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-4 py-1.5 rounded-full border border-indigo-500/20 mb-6">¿Listo para empezar?</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+                    Construyamos juntos la
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">estrategia digital</span>
+                    que tu marca necesita
+                </h2>
+                <p class="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">Diagnóstico gratuito, propuesta personalizada y resultados medibles. Todo empieza con una conversación.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+                    <a href="./contactanos.html" class="cta-shine bg-indigo-600 hover:bg-indigo-500 text-white px-10 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-indigo-600/25 text-base">Solicitar Diagnóstico Gratuito</a>
+                    <a href="https://wa.me/573243374019?text=Hola%20INFOKUS%2C%20quiero%20saber%20más%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-emerald-600/20 text-base">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448L.057 24z"/></svg>
+                        Escribir por WhatsApp
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Botón Flotante de WhatsApp Business -->
-    <a href="https://wa.me/573243374019?text=Hola%20INFOKUS,%20estoy%20interesado%20en%20sus%20servicios%20de%20diseño%20y%20redes%20sociales."
-        target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"
-        class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group">
-        <!-- Icono SVG de WhatsApp -->
-        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-            <path
-                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-        </svg>
-    </a>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500">
-        <p>&copy; 2026 INFOKUS. Todos los derechos reservados.</p>
+    <!-- ═══════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════ -->
+    <footer class="footer-main pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Marca -->
+                <div class="lg:col-span-1">
+                    <a href="./index.html" class="inline-block mb-4">
+                        <img src="./src/assets/images/infokus-logo.png" alt="Logo INFOKUS" class="h-14 w-auto object-contain">
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Agencia de marketing digital, manejo de redes sociales y desarrollo web SEO en Colombia. Transformamos marcas en referentes digitales.</p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.instagram.com/infokus.co/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram de INFOKUS">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                        </a>
+                        <a href="https://wa.me/573243374019" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="WhatsApp de INFOKUS">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        </a>
+                        <a href="mailto:infokusdigital@gmail.com" class="footer-social-icon" aria-label="Email de INFOKUS">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Servicios -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wide mb-4">Servicios</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./servicios/redes-sociales.html" class="footer-link">Gestión de Redes Sociales</a></li>
+                        <li><a href="./servicios/desarrollo-web.html" class="footer-link">Desarrollo Web &amp; SEO</a></li>
+                        <li><a href="./servicios/diseno-branding.html" class="footer-link">Diseño Gráfico &amp; Branding</a></li>
+                        <li><a href="./servicios/fotografia.html" class="footer-link">Fotografía &amp; Audiovisual</a></li>
+                        <li><a href="./servicios/chatbots.html" class="footer-link">Chatbots &amp; Automatización</a></li>
+                        <li><a href="./servicios/capacitaciones.html" class="footer-link">Capacitaciones de Marca</a></li>
+                    </ul>
+                </div>
+                <!-- Navegación -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wide mb-4">Navegación</h4>
+                    <ul class="space-y-3">
+                        <li><a href="./index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="#nosotros" class="footer-link">Sobre Nosotros</a></li>
+                        <li><a href="#portafolio" class="footer-link">Portafolio</a></li>
+                        <li><a href="./radar-digital.html" class="footer-link text-indigo-400">Radar Digital</a></li>
+                        <li><a href="./contactanos.html" class="footer-link">Contáctanos</a></li>
+                    </ul>
+                </div>
+                <!-- Contacto -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm uppercase tracking-wide mb-4">Contacto directo</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="https://wa.me/573243374019" target="_blank" rel="noopener noreferrer" class="footer-contact-item">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg></div>
+                                <span>+57 324 337 4019</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:infokusdigital@gmail.com" class="footer-contact-item">
+                                <div class="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-red-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg></div>
+                                <span>infokusdigital@gmail.com</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 rounded-xl bg-indigo-600/10 border border-indigo-500/20">
+                        <p class="text-xs text-indigo-300 font-medium">🕐 Horario de atención</p>
+                        <p class="text-xs text-slate-400 mt-1">Lun - Vie: 8:00 AM — 6:00 PM</p>
+                        <p class="text-xs text-slate-400">Sáb: 9:00 AM — 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-slate-500 text-xs">&copy; 2026 INFOKUS. Todos los derechos reservados.</p>
+                <p class="text-slate-600 text-xs">Diseñado con 💜 por el equipo INFOKUS en Colombia 🇨🇴</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Script Principal -->
-    <script src="./src/js/main.js"></script>
-</body>
+    <!-- Scripts -->
+    <script src="./src/js/wpp-chat.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+        }
 
+        // Read progress
+        const progressBar = document.getElementById('read-progress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+        }, { passive: true });
+
+        // Header hide/show on scroll
+        let lastScrollY = window.scrollY;
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            const current = window.scrollY;
+            header.style.transform = (current > lastScrollY && current > 100) ? 'translateY(-100%)' : 'translateY(0)';
+            lastScrollY = current;
+        }, { passive: true });
+
+        // Fade-up IntersectionObserver
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+
+        // Particles — full page
+        (function() {
+            const globalContainer = document.getElementById('particles-global');
+            const heroContainer = document.getElementById('particles-hero');
+            if (!globalContainer) return;
+            const colors = ['#6366f1','#8b5cf6','#a78bfa','#c4b5fd','#7c3aed','#818cf8'];
+            const animations = ['particle--float', 'particle--drift', 'particle--pulse'];
+            for (let i = 0; i < 40; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle ' + animations[Math.floor(Math.random() * animations.length)];
+                const size = Math.random() * 4 + 1.5;
+                p.style.cssText = 'width:'+size+'px;height:'+size+'px;background:'+colors[Math.floor(Math.random()*colors.length)]+';left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;animation-duration:'+(6+Math.random()*12)+'s;animation-delay:'+(Math.random()*15)+'s;';
+                globalContainer.appendChild(p);
+            }
+            if (heroContainer) {
+                for (let i = 0; i < 12; i++) {
+                    const p = document.createElement('div');
+                    p.className = 'particle particle--float';
+                    const size = Math.random() * 4 + 2;
+                    p.style.cssText = 'width:'+size+'px;height:'+size+'px;background:'+colors[Math.floor(Math.random()*colors.length)]+';left:'+(Math.random()*100)+'%;top:'+(60+Math.random()*40)+'%;animation-duration:'+(4+Math.random()*6)+'s;animation-delay:'+(Math.random()*5)+'s;';
+                    heroContainer.appendChild(p);
+                }
+            }
+        })();
+
+        // ═══════════════════════════════════════
+        // ROBOT EYE TRACKING
+        // ═══════════════════════════════════════
+        (function() {
+            const robot = document.getElementById('infokus-robot');
+            const eyeLeft = document.getElementById('eye-left');
+            const eyeRight = document.getElementById('eye-right');
+            if (!robot || !eyeLeft || !eyeRight) return;
+
+            const leftCenter = { x: 118, y: 105 };
+            const rightCenter = { x: 182, y: 105 };
+            const maxMove = 8;
+            let currentLeft = { x: 0, y: 0 };
+            let currentRight = { x: 0, y: 0 };
+            let targetLeft = { x: 0, y: 0 };
+            let targetRight = { x: 0, y: 0 };
+
+            document.addEventListener('mousemove', (e) => {
+                const rect = robot.getBoundingClientRect();
+                const svgCenterX = rect.left + rect.width / 2;
+                const svgCenterY = rect.top + rect.height * 0.31; // eye level
+
+                const dx = e.clientX - svgCenterX;
+                const dy = e.clientY - svgCenterY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                const clamp = Math.min(dist / 200, 1);
+                const angle = Math.atan2(dy, dx);
+
+                const moveX = Math.cos(angle) * maxMove * clamp;
+                const moveY = Math.sin(angle) * maxMove * clamp;
+
+                targetLeft = { x: moveX, y: moveY };
+                targetRight = { x: moveX, y: moveY };
+            });
+
+            function animateEyes() {
+                const lerp = 0.12;
+                currentLeft.x += (targetLeft.x - currentLeft.x) * lerp;
+                currentLeft.y += (targetLeft.y - currentLeft.y) * lerp;
+                currentRight.x += (targetRight.x - currentRight.x) * lerp;
+                currentRight.y += (targetRight.y - currentRight.y) * lerp;
+
+                eyeLeft.setAttribute('transform', `translate(${currentLeft.x}, ${currentLeft.y})`);
+                eyeRight.setAttribute('transform', `translate(${currentRight.x}, ${currentRight.y})`);
+                requestAnimationFrame(animateEyes);
+            }
+            animateEyes();
+
+            // Blink animation
+            const eyeLeftGroup = document.getElementById('eye-left-group');
+            const eyeRightGroup = document.getElementById('eye-right-group');
+            function blink() {
+                [eyeLeftGroup, eyeRightGroup].forEach(g => {
+                    if (g) g.style.transition = 'transform 0.1s';
+                    if (g) g.style.transform = 'scaleY(0.1)';
+                });
+                setTimeout(() => {
+                    [eyeLeftGroup, eyeRightGroup].forEach(g => {
+                        if (g) g.style.transform = 'scaleY(1)';
+                    });
+                }, 120);
+                setTimeout(blink, 2500 + Math.random() * 3000);
+            }
+            setTimeout(blink, 2000);
+
+            // Robot speech bubble cycling
+            const speeches = [
+                '¡Hola! 👋 Soy FOKI',
+                '¿Necesitas redes sociales? 📱',
+                'Creamos tu web perfecta 💻',
+                'Tu marca, otro nivel 🚀',
+                'Branding profesional 🎨',
+                '¡Escríbenos! 💬'
+            ];
+            let speechIndex = 0;
+            const speechText = document.getElementById('robot-speech-text');
+            const speechBubble = document.getElementById('robot-speech');
+            if (speechText && speechBubble) {
+                setInterval(() => {
+                    speechBubble.classList.add('robot-speech--hide');
+                    setTimeout(() => {
+                        speechIndex = (speechIndex + 1) % speeches.length;
+                        speechText.textContent = speeches[speechIndex];
+                        speechBubble.classList.remove('robot-speech--hide');
+                    }, 300);
+                }, 3500);
+            }
+        })();
+
+        // ═══════════════════════════════════════
+        // STAT COUNTER ANIMATION
+        // ═══════════════════════════════════════
+        (function() {
+            const counters = document.querySelectorAll('.stat-counter');
+            if (!counters.length) return;
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseFloat(el.dataset.target);
+                        const prefix = el.dataset.prefix || '';
+                        const suffix = el.dataset.suffix || '';
+                        const isDecimal = target % 1 !== 0;
+                        const duration = 1800;
+                        const start = performance.now();
+
+                        function update(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = target * eased;
+                            el.textContent = prefix + (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+                            if (progress < 1) requestAnimationFrame(update);
+                        }
+                        requestAnimationFrame(update);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(c => counterObserver.observe(c));
+        })();
+
+        // ═══════════════════════════════════════
+        // TYPEWRITER EFFECT FOR HERO
+        // ═══════════════════════════════════════
+        (function() {
+            const el = document.getElementById('hero-typed-text');
+            if (!el) return;
+
+            const phrases = [
+                'con estrategia digital',
+                'que convierte',
+                'en redes sociales',
+                'con diseño profesional',
+                'que genera resultados'
+            ];
+            let phraseIndex = 0;
+            let charIndex = phrases[0].length;
+            let isDeleting = false;
+            const typeSpeed = 60;
+            const deleteSpeed = 35;
+            const pauseEnd = 2500;
+            const pauseStart = 500;
+
+            function type() {
+                const current = phrases[phraseIndex];
+                
+                if (!isDeleting) {
+                    el.textContent = current.substring(0, charIndex);
+                    charIndex++;
+                    if (charIndex > current.length) {
+                        isDeleting = true;
+                        setTimeout(type, pauseEnd);
+                        return;
+                    }
+                    setTimeout(type, typeSpeed);
+                } else {
+                    el.textContent = current.substring(0, charIndex);
+                    charIndex--;
+                    if (charIndex < 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        charIndex = 0;
+                        setTimeout(type, pauseStart);
+                        return;
+                    }
+                    setTimeout(type, deleteSpeed);
+                }
+            }
+            // Start after initial pause
+            setTimeout(() => {
+                isDeleting = true;
+                type();
+            }, 3000);
+        })();
+    });
+    </script>
+
+</body>
 </html>

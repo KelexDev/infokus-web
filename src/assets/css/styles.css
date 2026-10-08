@@ -1,0 +1,1126 @@
+/* Efecto Glow pulsante para texto */
+.glow-text {
+    color: #a5b4fc;
+    animation: text-glow 3s ease-in-out infinite;
+}
+
+@keyframes text-glow {
+    0%, 100% {
+        text-shadow:
+            0 0 4px rgba(129, 140, 248, 0.3),
+            0 0 8px rgba(129, 140, 248, 0.1);
+        color: #a5b4fc;
+    }
+    50% {
+        text-shadow:
+            0 0 8px rgba(129, 140, 248, 0.6),
+            0 0 20px rgba(129, 140, 248, 0.4),
+            0 0 40px rgba(139, 92, 246, 0.3),
+            0 0 80px rgba(139, 92, 246, 0.15);
+        color: #c7d2fe;
+    }
+}
+
+/* ============================================
+   WIDGET DE WHATSAPP CHAT
+   ============================================ */
+.wpp-chat {
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    max-width: 420px;
+    width: 100%;
+}
+
+.wpp-chat-header {
+    background: linear-gradient(135deg, #075e54, #128c7e);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.wpp-chat-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+}
+
+.wpp-chat-name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+.wpp-chat-status {
+    font-size: 0.75rem;
+    color: #a8f0c6;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.wpp-chat-status::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #25d366;
+    display: inline-block;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.wpp-chat-body {
+    background: #ece5dd;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4ccc4' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding: 1.25rem 1rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.wpp-bubble {
+    max-width: 85%;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.625rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    position: relative;
+    animation: bubble-in 0.4s ease-out both;
+}
+
+.wpp-bubble-left {
+    background: #fff;
+    color: #303030;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.wpp-bubble-right {
+    background: #dcf8c6;
+    color: #303030;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.wpp-bubble:nth-child(1) { animation-delay: 0.1s; }
+.wpp-bubble:nth-child(2) { animation-delay: 0.3s; }
+.wpp-bubble:nth-child(3) { animation-delay: 0.5s; }
+.wpp-bubble:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes bubble-in {
+    from { opacity: 0; transform: translateY(10px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.wpp-bubble-time {
+    font-size: 0.65rem;
+    color: #999;
+    text-align: right;
+    margin-top: 0.2rem;
+}
+
+.wpp-chat-input {
+    background: #f0f0f0;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.wpp-chat-input-field {
+    flex: 1;
+    background: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    color: #666;
+    outline: none;
+    cursor: pointer;
+}
+
+.wpp-chat-send-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #25d366;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0;
+}
+
+.wpp-chat-send-btn:hover {
+    transform: scale(1.1);
+    background: #20bd5a;
+}
+
+/* ============================================
+   WIDGET FLOTANTE INTERACTIVO DE WHATSAPP
+   ============================================ */
+.wpp-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --- Tooltip --- */
+.wpp-widget-tooltip {
+    background: #075e54;
+    color: #fff;
+    padding: 0.5rem 0.875rem;
+    border-radius: 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(4px) scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+}
+
+.wpp-widget-tooltip--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Botón toggle --- */
+.wpp-widget-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25d366;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow:
+        0 4px 20px rgba(37, 211, 102, 0.35),
+        0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    color: #fff;
+    z-index: 10;
+}
+
+.wpp-widget-toggle:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 6px 28px rgba(37, 211, 102, 0.45),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.wpp-widget-toggle::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.25);
+    animation: wpp-pulse 2.5s ease-in-out infinite;
+    z-index: -1;
+}
+
+.wpp-widget--open .wpp-widget-toggle::before {
+    animation: none;
+    opacity: 0;
+}
+
+.wpp-widget--open .wpp-widget-toggle {
+    background: #4b5563;
+}
+
+@keyframes wpp-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.3); opacity: 0; }
+}
+
+.wpp-toggle-icon-wpp,
+.wpp-toggle-icon-close {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.wpp-toggle-icon-wpp {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.wpp-toggle-icon-close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+.wpp-widget--open .wpp-toggle-icon-wpp {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+
+.wpp-widget--open .wpp-toggle-icon-close {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* --- Ventana de chat --- */
+.wpp-widget-window {
+    position: absolute;
+    bottom: 76px;
+    right: 0;
+    width: 370px;
+    max-width: calc(100vw - 2rem);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+    transform-origin: bottom right;
+    pointer-events: none;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.wpp-widget-window--open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+/* Header */
+.wpp-widget-header {
+    background: linear-gradient(135deg, #075e54, #128c7e);
+    padding: 1rem 1.125rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.wpp-widget-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.wpp-widget-header-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.wpp-widget-name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.938rem;
+    line-height: 1.2;
+}
+
+.wpp-widget-status {
+    font-size: 0.7rem;
+    color: #a8f0c6;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.125rem;
+}
+
+.wpp-widget-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #25d366;
+    display: inline-block;
+    animation: pulse-dot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+.wpp-widget-close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.wpp-widget-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Body / mensajes */
+.wpp-widget-body {
+    background: #ece5dd;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4ccc4' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    padding: 1rem;
+    min-height: 220px;
+    max-height: 320px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar sutil */
+.wpp-widget-body::-webkit-scrollbar {
+    width: 4px;
+}
+.wpp-widget-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.wpp-widget-body::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+    border-radius: 4px;
+}
+
+/* Burbujas */
+.wpp-widget-bubble {
+    max-width: 85%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    animation: widget-bubble-in 0.3s ease-out both;
+    word-wrap: break-word;
+}
+
+.wpp-widget-bubble-left {
+    background: #fff;
+    color: #303030;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+}
+
+.wpp-widget-bubble-right {
+    background: #dcf8c6;
+    color: #303030;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.wpp-widget-bubble-time {
+    font-size: 0.6rem;
+    color: #999;
+    text-align: right;
+    margin-top: 0.15rem;
+}
+
+@keyframes widget-bubble-in {
+    from { opacity: 0; transform: translateY(8px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Typing indicator */
+.wpp-widget-typing {
+    padding: 0.625rem 1rem;
+}
+
+.wpp-typing-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.wpp-typing-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #90a4ae;
+    animation: typing-bounce 1.4s ease-in-out infinite;
+}
+
+.wpp-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.wpp-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-bounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+    30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* Input area */
+.wpp-widget-input-area {
+    background: #f0f0f0;
+    padding: 0.625rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wpp-widget-input {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 1.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.wpp-widget-input:focus {
+    border-color: #25d366;
+}
+
+.wpp-widget-input::placeholder {
+    color: #999;
+}
+
+.wpp-widget-send {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #25d366;
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0;
+}
+
+.wpp-widget-send:hover {
+    transform: scale(1.08);
+    background: #20bd5a;
+}
+
+.wpp-widget-send:active {
+    transform: scale(0.95);
+}
+
+/* Footer note */
+.wpp-widget-footer-note {
+    background: #e8e8e8;
+    padding: 0.4rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.65rem;
+    color: #888;
+}
+
+/* Responsive: en móviles, full width */
+@media (max-width: 420px) {
+    .wpp-widget-window {
+        width: calc(100vw - 1.5rem);
+        right: -0.25rem;
+        border-radius: 1rem;
+    }
+}
+
+/* ============================================
+   FOOTER PROFESIONAL
+   ============================================ */
+.footer-main {
+    border-top: 1px solid rgba(30, 41, 59, 0.7);
+    background: linear-gradient(180deg, #020617 0%, #0a0f1e 100%);
+}
+
+.footer-link {
+    color: #94a3b8;
+    transition: color 0.2s;
+    font-size: 0.875rem;
+}
+
+.footer-link:hover {
+    color: #a5b4fc;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+
+.footer-contact-item:hover {
+    color: #e2e8f0;
+}
+
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    transition: all 0.3s;
+}
+
+.footer-social-icon:hover {
+    background: rgba(129, 140, 248, 0.15);
+    border-color: rgba(129, 140, 248, 0.3);
+    color: #a5b4fc;
+    transform: translateY(-2px);
+}
+
+.footer-divider {
+    border-top: 1px solid rgba(30, 41, 59, 0.5);
+}
+
+/* ============================================
+   VENTAJAS / STATS ANIMADOS
+   ============================================ */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    transition: left 0.6s ease;
+}
+
+.stat-card:hover::after {
+    left: 100%;
+}
+
+/* ============================================
+   NAVIGATION DROPDOWN
+   ============================================ */
+.nav-dropdown-trigger {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 280px;
+    background: rgba(15, 23, 42, 0.97);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.03);
+    z-index: 100;
+}
+
+.nav-dropdown-trigger:hover .nav-dropdown,
+.nav-dropdown-trigger:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.875rem;
+    border-radius: 0.625rem;
+    color: #cbd5e1;
+    font-size: 0.84rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.nav-dropdown-item:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: #a5b4fc;
+}
+
+.nav-dropdown-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   MARQUEE / CLIENT LOGOS SCROLL
+   ============================================ */
+.marquee-container {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 3rem;
+    animation: marquee-scroll 25s linear infinite;
+    width: max-content;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(1) brightness(0.7);
+    opacity: 0.5;
+    transition: all 0.4s;
+    flex-shrink: 0;
+}
+
+.marquee-logo:hover {
+    filter: grayscale(0) brightness(1);
+    opacity: 1;
+}
+
+/* ============================================
+   HERO TECH BACKGROUND
+   ============================================ */
+.hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image:
+        linear-gradient(rgba(99,102,241,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,102,241,1) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: grid-drift 20s linear infinite;
+}
+
+@keyframes grid-drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(60px, 60px); }
+}
+
+.particle-global {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.particle--float { animation: p-float linear infinite; }
+.particle--drift { animation: p-drift linear infinite; }
+.particle--pulse { animation: p-pulse ease-in-out infinite; }
+
+@keyframes p-float {
+    0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.3; }
+    100% { opacity: 0; transform: translateY(-180px) scale(1.1); }
+}
+
+@keyframes p-drift {
+    0%   { opacity: 0; transform: translate(0, 0) scale(0.6); }
+    15%  { opacity: 0.5; }
+    50%  { transform: translate(40px, -90px) scale(1); }
+    85%  { opacity: 0.4; }
+    100% { opacity: 0; transform: translate(-20px, -160px) scale(0.7); }
+}
+
+@keyframes p-pulse {
+    0%   { opacity: 0; transform: scale(0.4); }
+    25%  { opacity: 0.6; transform: scale(1.2); }
+    50%  { opacity: 0.3; transform: scale(0.8); }
+    75%  { opacity: 0.5; transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(0.4); }
+}
+
+/* ============================================
+   SERVICE PILLS (HERO)
+   ============================================ */
+.service-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.875rem;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(99, 102, 241, 0.08);
+    color: #a5b4fc;
+    opacity: 0;
+    animation: pill-appear 0.5s ease forwards;
+}
+
+@keyframes pill-appear {
+    from { opacity: 0; transform: translateY(8px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ============================================
+   FAQ ACCORDION
+   ============================================ */
+.faq-item {
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.faq-item:hover,
+.faq-item.active {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-family: inherit;
+}
+
+.faq-question:hover {
+    color: #a5b4fc;
+}
+
+.faq-chevron {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    color: #64748b;
+}
+
+.faq-item.active .faq-chevron {
+    transform: rotate(180deg);
+    color: #818cf8;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+}
+
+.faq-answer-inner {
+    padding: 0 1.5rem 1.25rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* ============================================
+   FADE-UP SCROLL ANIMATION
+   ============================================ */
+.fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   READ PROGRESS BAR
+   ============================================ */
+.read-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa);
+    z-index: 9999;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+/* ============================================
+   CTA SHINE EFFECT
+   ============================================ */
+.cta-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    animation: cta-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes cta-shimmer {
+    0%   { left: -100%; }
+    50%  { left: 120%; }
+    100% { left: 120%; }
+}
+
+/* ============================================
+   ROBOT MASCOTA INTERACTIVO
+   ============================================ */
+.robot-wrapper {
+    position: relative;
+    width: 280px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .robot-wrapper {
+        width: 340px;
+        height: 380px;
+    }
+}
+
+.robot-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.15));
+    animation: robot-float 4s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes robot-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.robot-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: 1;
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* Robot eye blink transform origin */
+.robot-eye-group {
+    transform-origin: center center;
+}
+
+/* Robot arms subtle wave */
+.robot-arm-left {
+    animation: arm-wave-left 3s ease-in-out infinite;
+    transform-origin: 68px 190px;
+}
+
+.robot-arm-right {
+    animation: arm-wave-right 3.5s ease-in-out infinite;
+    transform-origin: 232px 190px;
+}
+
+@keyframes arm-wave-left {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-3deg); }
+}
+
+@keyframes arm-wave-right {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+}
+
+/* --- Speech Bubble --- */
+.robot-speech {
+    position: absolute;
+    top: -8px;
+    right: -20px;
+    background: rgba(99, 102, 241, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #c7d2fe;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.75rem;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.robot-speech::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background: rgba(99, 102, 241, 0.15);
+    border-right: 1px solid rgba(99, 102, 241, 0.3);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
+    transform: rotate(45deg);
+}
+
+.robot-speech--hide {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.95);
+}
+
+/* --- Floating Service Pills --- */
+.robot-floating-pills {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.robot-pill {
+    position: absolute;
+    font-size: 0.62rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    color: #a5b4fc;
+    white-space: nowrap;
+    opacity: 0;
+    animation: pill-orbit 16s linear infinite;
+}
+
+.robot-pill-1 { top: 5%; left: 0%; animation-delay: 0s; }
+.robot-pill-2 { top: 20%; right: -10%; animation-delay: -2.6s; }
+.robot-pill-3 { top: 55%; left: -15%; animation-delay: -5.3s; }
+.robot-pill-4 { bottom: 15%; right: -5%; animation-delay: -8s; }
+.robot-pill-5 { bottom: 5%; left: 5%; animation-delay: -10.6s; }
+.robot-pill-6 { top: 38%; right: -12%; animation-delay: -13.3s; }
+
+@keyframes pill-orbit {
+    0% { opacity: 0; transform: translateY(8px) scale(0.8); }
+    5% { opacity: 0.7; transform: translateY(0) scale(1); }
+    15% { opacity: 0.7; }
+    20% { opacity: 0; transform: translateY(-8px) scale(0.8); }
+    100% { opacity: 0; }
+}
+
+/* --- Typewriter cursor --- */
+#hero-typed-text::after {
+    content: '|';
+    animation: typed-cursor 0.7s ease-in-out infinite;
+    color: #818cf8;
+    font-weight: 300;
+    margin-left: 2px;
+}
+
+@keyframes typed-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsive robot adjustments */
+@media (max-width: 1023px) {
+    .robot-wrapper {
+        width: 220px;
+        height: 260px;
+    }
+    .robot-speech {
+        top: -5px;
+        right: -10px;
+        font-size: 0.65rem;
+    }
+    .robot-pill {
+        font-size: 0.55rem;
+    }
+}

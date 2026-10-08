@@ -65,32 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(updateParallax);
     }, { passive: true });
 
-    // --- Header: Ocultar al bajar, mostrar al subir ---
-    const header = document.getElementById('main-header');
-    let lastScrollY = window.scrollY;
-    let ticking = false;
 
-    function updateHeader() {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY > lastScrollY && currentScrollY > 5) {
-            // Scrolling down — hide header
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up — show header
-            header.style.transform = 'translateY(0)';
-        }
-
-        lastScrollY = currentScrollY;
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    }, { passive: true });
 
     // --- Formulario de Contacto ---
     const contactForm = document.querySelector('#contacto form');
