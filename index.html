@@ -244,27 +244,20 @@
                             <!-- Glow detrás del robot -->
                             <div class="robot-glow"></div>
                             
-                            <!-- Robot 3D Image -->
-                            <div class="robot-3d-scene" id="infokus-robot">
-                                <img src="./src/assets/images/foki-robot.jpg" 
-                                     alt="FOKI — Mascota robot de INFOKUS" 
-                                     class="robot-img"
-                                     id="robot-img">
-                                
-                                <!-- Overlay de ojos interactivos (siguen el mouse) -->
-                                <div class="robot-eyes-overlay" id="robot-eyes-overlay">
-                                    <div class="robot-eye-3d" id="eye-left-3d">
-                                        <div class="robot-pupil-3d"></div>
-                                    </div>
-                                    <div class="robot-eye-3d" id="eye-right-3d">
-                                        <div class="robot-pupil-3d"></div>
-                                    </div>
-                                </div>
+                            <!-- FOKI: imagen de referencia con transparencia y animación por capas -->
+                            <div class="robot-3d-scene" id="infokus-robot" role="img"
+                                 aria-label="FOKI, robot blanco en 3D que flota, saluda con la mano y parpadea">
+                                <img src="./src/assets/images/foki-transparent.png"
+                                     alt="" class="foki-fallback" width="1254" height="1254">
                             </div>
+                            <button type="button" id="foki-greet" class="foki-greet" hidden>
+                                Saludar a FOKI <span aria-hidden="true">👋</span>
+                            </button>
 
                             <!-- Speech bubble del robot -->
                             <div class="robot-speech" id="robot-speech">
-                                <span id="robot-speech-text">¡Hola! 👋 Soy FOKI</span>
+                                <p class="foki-speech-title">¡Hola, soy FOKI! <span class="foki-speech-wave" aria-hidden="true">👋</span></p>
+                                <p id="robot-speech-text">Con <strong>INFOKUS</strong>, le damos estrategia a tus redes: contenido que conecta y hace crecer tu marca.</p>
                             </div>
 
                             <!-- Service Pills flotantes alrededor del robot -->
@@ -717,95 +710,6 @@
         })();
 
         // ═══════════════════════════════════════
-        // ROBOT EYE TRACKING
-        // ═══════════════════════════════════════
-        (function() {
-            const robot = document.getElementById('infokus-robot');
-            const eyeLeft = document.getElementById('eye-left');
-            const eyeRight = document.getElementById('eye-right');
-            if (!robot || !eyeLeft || !eyeRight) return;
-
-            const leftCenter = { x: 118, y: 105 };
-            const rightCenter = { x: 182, y: 105 };
-            const maxMove = 8;
-            let currentLeft = { x: 0, y: 0 };
-            let currentRight = { x: 0, y: 0 };
-            let targetLeft = { x: 0, y: 0 };
-            let targetRight = { x: 0, y: 0 };
-
-            document.addEventListener('mousemove', (e) => {
-                const rect = robot.getBoundingClientRect();
-                const svgCenterX = rect.left + rect.width / 2;
-                const svgCenterY = rect.top + rect.height * 0.31; // eye level
-
-                const dx = e.clientX - svgCenterX;
-                const dy = e.clientY - svgCenterY;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                const clamp = Math.min(dist / 200, 1);
-                const angle = Math.atan2(dy, dx);
-
-                const moveX = Math.cos(angle) * maxMove * clamp;
-                const moveY = Math.sin(angle) * maxMove * clamp;
-
-                targetLeft = { x: moveX, y: moveY };
-                targetRight = { x: moveX, y: moveY };
-            });
-
-            function animateEyes() {
-                const lerp = 0.12;
-                currentLeft.x += (targetLeft.x - currentLeft.x) * lerp;
-                currentLeft.y += (targetLeft.y - currentLeft.y) * lerp;
-                currentRight.x += (targetRight.x - currentRight.x) * lerp;
-                currentRight.y += (targetRight.y - currentRight.y) * lerp;
-
-                eyeLeft.setAttribute('transform', `translate(${currentLeft.x}, ${currentLeft.y})`);
-                eyeRight.setAttribute('transform', `translate(${currentRight.x}, ${currentRight.y})`);
-                requestAnimationFrame(animateEyes);
-            }
-            animateEyes();
-
-            // Blink animation
-            const eyeLeftGroup = document.getElementById('eye-left-group');
-            const eyeRightGroup = document.getElementById('eye-right-group');
-            function blink() {
-                [eyeLeftGroup, eyeRightGroup].forEach(g => {
-                    if (g) g.style.transition = 'transform 0.1s';
-                    if (g) g.style.transform = 'scaleY(0.1)';
-                });
-                setTimeout(() => {
-                    [eyeLeftGroup, eyeRightGroup].forEach(g => {
-                        if (g) g.style.transform = 'scaleY(1)';
-                    });
-                }, 120);
-                setTimeout(blink, 2500 + Math.random() * 3000);
-            }
-            setTimeout(blink, 2000);
-
-            // Robot speech bubble cycling
-            const speeches = [
-                '¡Hola! 👋 Soy FOKI',
-                '¿Necesitas redes sociales? 📱',
-                'Creamos tu web perfecta 💻',
-                'Tu marca, otro nivel 🚀',
-                'Branding profesional 🎨',
-                '¡Escríbenos! 💬'
-            ];
-            let speechIndex = 0;
-            const speechText = document.getElementById('robot-speech-text');
-            const speechBubble = document.getElementById('robot-speech');
-            if (speechText && speechBubble) {
-                setInterval(() => {
-                    speechBubble.classList.add('robot-speech--hide');
-                    setTimeout(() => {
-                        speechIndex = (speechIndex + 1) % speeches.length;
-                        speechText.textContent = speeches[speechIndex];
-                        speechBubble.classList.remove('robot-speech--hide');
-                    }, 300);
-                }, 3500);
-            }
-        })();
-
-        // ═══════════════════════════════════════
         // STAT COUNTER ANIMATION
         // ═══════════════════════════════════════
         (function() {
@@ -896,5 +800,6 @@
     });
     </script>
 
+    <script type="module" src="./src/assets/js/foki-robot.js"></script>
 </body>
 </html>
