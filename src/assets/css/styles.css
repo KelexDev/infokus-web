@@ -947,8 +947,8 @@
    ============================================ */
 .robot-wrapper {
     position: relative;
-    width: 280px;
-    height: 320px;
+    width: min(390px, 100%);
+    height: 560px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -956,23 +956,9 @@
 
 @media (min-width: 768px) {
     .robot-wrapper {
-        width: 340px;
-        height: 380px;
+        width: 420px;
+        height: 590px;
     }
-}
-
-.robot-svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.15));
-    animation: robot-float 4s ease-in-out infinite;
-    position: relative;
-    z-index: 2;
-}
-
-@keyframes robot-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
 }
 
 .robot-glow {
@@ -994,68 +980,89 @@
     50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.2); }
 }
 
-/* Robot eye blink transform origin */
-.robot-eye-group {
-    transform-origin: center center;
-}
-
-/* Robot arms subtle wave */
-.robot-arm-left {
-    animation: arm-wave-left 3s ease-in-out infinite;
-    transform-origin: 68px 190px;
-}
-
-.robot-arm-right {
-    animation: arm-wave-right 3.5s ease-in-out infinite;
-    transform-origin: 232px 190px;
-}
-
-@keyframes arm-wave-left {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(-3deg); }
-}
-
-@keyframes arm-wave-right {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(3deg); }
-}
-
-/* --- Speech Bubble --- */
+/* --- FOKI's conversational bubble --- */
 .robot-speech {
     position: absolute;
-    top: -8px;
-    right: -20px;
-    background: rgba(99, 102, 241, 0.15);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    color: #c7d2fe;
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 0.4rem 0.75rem;
-    border-radius: 0.75rem;
-    white-space: nowrap;
+    top: 0;
+    right: 0;
+    width: min(320px, 100%);
+    box-sizing: border-box;
+    padding: 17px 20px;
+    border: 1px solid rgba(224, 232, 255, 0.3);
+    border-radius: 24px 24px 24px 9px;
+    background:
+        radial-gradient(ellipse at 0% 0%, rgba(221, 239, 255, 0.2), transparent 60%),
+        radial-gradient(ellipse at 100% 100%, rgba(155, 129, 255, 0.15), transparent 65%),
+        linear-gradient(125deg, rgba(255, 255, 255, 0.13), rgba(129, 140, 248, 0.055) 50%, rgba(255, 255, 255, 0.095));
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    backdrop-filter: blur(22px) saturate(170%);
+    color: #e1e5f6;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        inset 1px 0 0 rgba(255, 255, 255, 0.13),
+        inset 0 -1px 0 rgba(190, 180, 255, 0.16),
+        0 16px 40px rgba(0, 0, 0, 0.24),
+        0 0 32px rgba(129, 140, 248, 0.09);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);
+    font-size: 13.5px;
+    line-height: 1.55;
+    white-space: normal;
+    text-align: left;
     z-index: 10;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: opacity 0.3s, transform 0.3s;
+    transform-origin: 25% 100%;
+    animation: foki-bubble-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-
+.robot-speech::before {
+    content: '';
+    position: absolute;
+    inset: 5px 8px auto;
+    height: 38%;
+    border-radius: 20px 20px 50% 50%;
+    background: linear-gradient(170deg, rgba(255, 255, 255, 0.11), transparent 80%);
+    pointer-events: none;
+}
 .robot-speech::after {
     content: '';
     position: absolute;
-    bottom: -6px;
-    left: 20px;
-    width: 12px;
-    height: 12px;
-    background: rgba(99, 102, 241, 0.15);
-    border-right: 1px solid rgba(99, 102, 241, 0.3);
-    border-bottom: 1px solid rgba(99, 102, 241, 0.3);
-    transform: rotate(45deg);
+    left: 55%;
+    bottom: -11px;
+    width: 23px;
+    height: 23px;
+    border-radius: 0 0 6px 0;
+    background: linear-gradient(135deg, rgba(118, 119, 165, 0.2), rgba(61, 61, 108, 0.5));
+    border-right: 1px solid rgba(224, 232, 255, 0.26);
+    border-bottom: 1px solid rgba(224, 232, 255, 0.26);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    backdrop-filter: blur(22px) saturate(170%);
+    transform: rotate(45deg) skew(-8deg, -8deg);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
-
-.robot-speech--hide {
-    opacity: 0;
-    transform: translateY(-4px) scale(0.95);
+.robot-speech p { position: relative; margin: 0; }
+.robot-speech .foki-speech-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+}
+.robot-speech strong { color: #c5b9ff; font-weight: 800; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .robot-speech { background-color: rgba(29, 31, 60, 0.96); }
+}
+.foki-speech-wave { display: inline-block; transform-origin: 70% 80%; }
+.robot-speech.is-greeting .foki-speech-wave { animation: foki-chat-wave 0.85s ease-in-out; }
+@keyframes foki-bubble-in {
+    from { opacity: 0; transform: translateY(10px) scale(0.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes foki-chat-wave {
+    0%, 100% { transform: rotate(0); }
+    20%, 60% { transform: rotate(18deg); }
+    40%, 80% { transform: rotate(-10deg); }
 }
 
 /* --- Floating Service Pills --- */
@@ -1112,15 +1119,64 @@
 /* Responsive robot adjustments */
 @media (max-width: 1023px) {
     .robot-wrapper {
-        width: 220px;
-        height: 260px;
+        width: min(290px, 100%);
+        height: 455px;
     }
     .robot-speech {
-        top: -5px;
-        right: -10px;
-        font-size: 0.65rem;
+        top: 0;
+        right: 0;
+        padding: 14px 17px;
+        font-size: 13px;
     }
     .robot-pill {
         font-size: 0.55rem;
     }
+}
+
+/* Reference mascot with genuine transparency, directly on the page background. */
+.robot-3d-scene {
+    position: absolute;
+    inset: 132px 0 34px;
+    overflow: visible;
+    background: transparent;
+    z-index: 2;
+}
+.foki-fallback, .foki-illustration {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.foki-fallback { object-fit: contain; }
+.foki-illustration { opacity: 0; overflow: visible; }
+.foki-ready .foki-illustration { opacity: 1; }
+.foki-ready .foki-fallback { visibility: hidden; }
+.foki-greet {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(165, 180, 252, 0.45);
+    background: #1e1b4b;
+    color: #e0e7ff;
+    white-space: nowrap;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+.foki-greet:hover { background: #312e81; }
+.foki-greet:focus-visible { outline: 3px solid #38bdf8; outline-offset: 4px; }
+.foki-greet[hidden] { display: none; }
+.robot-floating-pills { z-index: 3; }
+@media (max-width: 1023px) {
+    .robot-pill-2, .robot-pill-4, .robot-pill-6 { right: 0; }
+    .robot-pill-3 { left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .foki-illustration, .robot-speech { transition: none; }
+    .robot-glow, .robot-pill, .robot-speech, .foki-speech-wave { animation: none !important; }
 }
