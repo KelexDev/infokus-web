@@ -3,7 +3,7 @@ const stage = document.getElementById('infokus-robot');
 const greetButton = document.getElementById('foki-greet');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-if (stage && greetButton) {
+if (stage) {
     const imageUrl = new URL('../images/foki-transparent.png', import.meta.url).href;
     const illustration = new Image();
     illustration.src = imageUrl;
@@ -108,7 +108,7 @@ if (stage && greetButton) {
             nextWave = elapsed + 7;
             resume();
         }
-        greetButton.addEventListener('click', greet);
+        if (greetButton) greetButton.addEventListener('click', greet);
         stage.addEventListener('pointerenter', greet);
         stage.addEventListener('pointermove', event => {
             const bounds = stage.getBoundingClientRect();
@@ -125,7 +125,7 @@ if (stage && greetButton) {
         visibility.observe(stage);
         pose(0, 0);
         stage.classList.add('foki-ready');
-        greetButton.hidden = false;
+        if (greetButton) greetButton.hidden = false;
         resume();
     }).catch(error => {
         console.warn('FOKI: se muestra la imagen transparente de respaldo.', error);
